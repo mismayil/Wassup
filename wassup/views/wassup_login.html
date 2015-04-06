@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/wassup.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/ext/bootstrap.css" />
+  </head>
+  <body>
+  <div id="login_container">
+    <img class="logo" src="/static/wassup_logo.png"/>
+
+    <div id="login_form">
+      %if error_message:
+      <p>
+        <em class="text-warning">{{error_message}}</em>
+      </p>
+      %end
+      <form role="form" method="POST" action="/logged_in">
+        <div class="form-group">
+          <input type="text" class="form-control" id="login_user_id" name="user_id" placeholder="Username" autofocus/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="login_full_name" name="full_name" placeholder="Full name"/>
+        </div>
+          <button type="submit" class="btn btn-success" id="login_submit">Log in</button>
+      </form>
+    </div>
+  </div>
+
+    <script src="static/js/ext/underscore.js"></script>
+    <script type="text/javascript" src="/static/js/wassup.js"></script>
+  </body>
+</html>
